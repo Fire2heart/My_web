@@ -28,3 +28,19 @@ document.querySelectorAll('.project-img').forEach(function(el){
   el.style.backgroundSize = 'cover';
   el.style.backgroundPosition = 'center';
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Получаем все ссылки внутри меню
+  const menuLinks = document.querySelectorAll('.nav-links a');
+  
+  // Получаем чекбокс
+  const burgerToggle = document.getElementById('burger-toggle');
+
+  // Добавляем обработчик события для каждой ссылки
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Снимаем галочку с чекбокса, чтобы бургер-меню закрылось
+      burgerToggle.checked = false;
+    });
+  });
+});
